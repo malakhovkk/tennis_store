@@ -1,23 +1,16 @@
 import NavigationLink from "./navigationLink";
 
 const navLinks = [
-  { href: "/", title: "Главная", activeClassName: "text-blue-900" },
-  { href: "/rackets", title: "Ракетки", activeClassName: "text-blue-900" },
+  { href: "/", title: "Главная" },
+  { href: "/rackets", title: "Ракетки" },
 ];
 
 export default function Menu() {
   return (
     <nav>
       <ul className="flex gap-7">
-        {navLinks.map(({ href, title, activeClassName }) => {
-          return (
-            <NavigationLink
-              key={title}
-              href={href}
-              activeClassName={activeClassName}
-              title={title}
-            />
-          );
+        {navLinks.map(({ href, title }) => {
+          return <NavigationLink key={title} href={href} title={title} />;
         })}
       </ul>
     </nav>
