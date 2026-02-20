@@ -1,14 +1,12 @@
 import Image from "next/image";
+import { Suspense } from "react";
+import { RacketContainer } from "@/components/racket/racket-container";
+import Loading from "@/components/loading/loading";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center  font-sans dark:bg-black w-300">
-      Сайт-интернет магазин по продаже теннисного инвентаря. На сайте
-      представлен широкий ассортимент товаров, включая ракетки, мячи, обувь и
-      аксессуары для тенниса. Пользователи могут легко просматривать и выбирать
-      товары, а также оформлять заказы онлайн. Сайт предлагает удобный интерфейс
-      и быструю доставку, обеспечивая отличный опыт покупок для любителей
-      тенниса.
-    </div>
+    <Suspense fallback={<Loading />}>
+      <RacketContainer />
+    </Suspense>
   );
 }

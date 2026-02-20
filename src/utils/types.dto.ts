@@ -14,3 +14,8 @@ export interface IRacket {
     name: string;
   };
 }
+
+export type Response<Entity> = Promise<{
+  isError: boolean;
+  data?: Entity;
+}>;

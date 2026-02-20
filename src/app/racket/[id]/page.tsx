@@ -3,11 +3,11 @@ import { IRacket } from "@/utils/types.dto";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  return rackets.map((racket) => ({
-    id: racket.id.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   return rackets.map((racket) => ({
+//     id: racket.id.toString(),
+//   }));
+// }
 
 export default async function RacketPage({
   params,
@@ -29,13 +29,12 @@ export default async function RacketPage({
       </div>
 
       <div>
-        <Image
+        <img
           className="w-full"
           src={racket.imageUrl}
           alt={racket.name}
           width={200}
           height={250}
-          unoptimized={true}
         />
       </div>
     </main>

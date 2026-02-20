@@ -1,29 +1,24 @@
 "use client";
 
+import { ComponentProps, FC } from "react";
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
+type Props = ComponentProps<typeof Link>;
 
 interface NavigationLinkProps {
   href: string;
   title: string;
-  activeClassName?: string;
-  className?: string;
 }
 
-export default function NavigationLink({
-  href,
-  title,
-  activeClassName = "text-blue-900",
-  className = "",
-}: NavigationLinkProps) {
+export const NavigationLink: FC<Props> = ({ children, ...props }) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const activeClassName = "text-blue-900";
+  const isActive = pathname === props.href;
 
   return (
-    <li className={isActive ? activeClassName : ""}>
-      <Link href={href} className={className}>
-        {title}
-      </Link>
+    <li key={props.key} className={isActive ? activeClassName : ""}>
+      <Link href={props.href}>{props.title}</Link>
     </li>
   );
-}
+};

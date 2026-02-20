@@ -1,4 +1,4 @@
-import NavigationLink from "./navigationLink";
+import { NavigationLink } from "./navigationLink";
 
 const navLinks = [
   { href: "/", title: "Главная", activeClassName: "text-blue-900" },
@@ -10,14 +10,7 @@ export default function Menu() {
     <nav>
       <ul className="flex gap-7">
         {navLinks.map(({ href, title, activeClassName }) => {
-          return (
-            <NavigationLink
-              key={title}
-              href={href}
-              activeClassName={activeClassName}
-              title={title}
-            />
-          );
+          return <NavigationLink key={title} href={href} title={title} />;
         })}
       </ul>
     </nav>
