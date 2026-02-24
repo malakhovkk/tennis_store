@@ -1,10 +1,10 @@
 import Card from "../../components/ui/card";
 import { IRacket } from "@/utils/types.dto";
-import { getRackets } from "@/services/get-rackets";
+import { getRacketsTop10 } from "@/services/get-rackets-top10";
 // const data: IRacket[] = rackets;
 
 export default async function Home() {
-  const { data, isError } = await getRackets({});
+  const { data, isError } = await getRacketsTop10({});
   if (isError) {
     return <div>Ошибка загрузки данных</div>;
   }

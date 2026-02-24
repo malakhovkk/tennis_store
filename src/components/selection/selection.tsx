@@ -9,8 +9,8 @@ type Props = PropsWithChildren & {
 export const Selection: FC<Props> = ({ children, hrefToAll, title }) => {
   return (
     <section>
-      <div className={"textdecoration-none"}>
-        <div className={""}>{title}</div>
+      <div>
+        <div>{title}</div>
         {hrefToAll && <Link href={hrefToAll}>Все</Link>}
       </div>
       <div className={"w-200"}>{children}</div>

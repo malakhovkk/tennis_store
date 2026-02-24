@@ -1,4 +1,5 @@
-import { rackets } from "@/utils/mock";
+// import { rackets } from "@/utils/mock";
+import { getRackets } from "@/services/get-rackets";
 import { IRacket } from "@/utils/types.dto";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -14,6 +15,7 @@ export default async function RacketPage({
 }: {
   params: { id: string };
 }) {
+  const rackets: IRacket[] = (await getRackets({})).data || [];
   const { id } = await params;
   const racket = rackets.find((racket) => racket.id === parseInt(id));
   if (!racket) {
@@ -30,11 +32,11 @@ export default async function RacketPage({
 
       <div>
         <img
-          className="w-full"
+          className=""
           src={racket.imageUrl}
           alt={racket.name}
-          width={200}
-          height={250}
+          width={400}
+          height={500}
         />
       </div>
     </main>
