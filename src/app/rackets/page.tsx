@@ -1,9 +1,8 @@
 import Card from "../../components/ui/card";
 import { IRacket } from "@/utils/types.dto";
 import { getRackets } from "@/services/get-rackets";
-// const data: IRacket[] = rackets;
 
-export default async function Home() {
+export default async function RacketsPage() {
   const { data, isError } = await getRackets({});
   if (isError) {
     return <div>Ошибка загрузки данных</div>;

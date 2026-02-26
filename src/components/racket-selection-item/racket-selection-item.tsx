@@ -11,7 +11,7 @@ export const RacketSelectionItem: FC<Props> = ({ racket }) => {
   const { imageUrl, name, id } = racket;
 
   return (
-    <div className={""}>
+    <div>
       <img className={"w-80 h-72"} src={imageUrl} alt={name} />
       <NavigationLink href={`/racket/${id}`} title={name} />
     </div>

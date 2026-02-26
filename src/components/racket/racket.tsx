@@ -11,13 +11,13 @@ export const Racket: FC<Props> = ({ racket }) => {
   const { name, imageUrl, description, brand, price, model } = racket;
 
   return (
-    <section className={""}>
+    <section>
       <div>
-        <div className={""}>{brand.name}</div>
-        <div className={""}>{name}</div>
+        <div>{brand.name}</div>
+        <div>{name}</div>
         <div>{description}</div>
       </div>
-      <img className={""} src={imageUrl} alt={name} />
+      <img src={imageUrl} alt={name} />
       <div>
         <div>Price: {price}</div>
         <div>Model: {model}</div>

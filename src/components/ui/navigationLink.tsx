@@ -6,11 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 type Props = ComponentProps<typeof Link>;
 
-interface NavigationLinkProps {
-  href: string;
-  title: string;
-}
-
 export const NavigationLink: FC<Props> = ({ children, ...props }) => {
   const pathname = usePathname();
   const activeClassName = "text-blue-900";

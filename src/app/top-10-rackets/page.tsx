@@ -3,7 +3,7 @@ import { IRacket } from "@/utils/types.dto";
 import { getRacketsTop10 } from "@/services/get-rackets-top10";
 // const data: IRacket[] = rackets;
 
-export default async function Home() {
+export default async function RacketsTop10Page() {
   const { data, isError } = await getRacketsTop10({});
   if (isError) {
     return <div>Ошибка загрузки данных</div>;

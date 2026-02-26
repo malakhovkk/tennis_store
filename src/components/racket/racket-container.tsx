@@ -4,20 +4,19 @@ import { getRackets } from "@/services/get-rackets";
 import { getRacketsTop10 } from "@/services/get-rackets-top10";
 export const RacketContainer = async () => {
   const [
-    { isError: isError10, data: data10 },
+    { isError: isError, data: data },
     { isError: isErrorTop10, data: dataTop10 },
   ] = await Promise.all([getRackets({}), getRacketsTop10({})]);
-  //   const { isError: isErrorTop10, data: dataTop10 } = await getRacketsTop10({});
-  if (isError10 || isErrorTop10) {
+  if (isError || isErrorTop10) {
     return "error";
   }
-  if (!data10 || !dataTop10) {
+  if (!data || !dataTop10) {
     return "not found";
   }
   return (
     <>
       <Selection title="Ракетки" hrefToAll="/rackets">
-        {data10?.map((racket) => (
+        {data?.map((racket) => (
           <Card key={racket.id} racketData={racket} />
         ))}
       </Selection>

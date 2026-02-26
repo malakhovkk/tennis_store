@@ -1,14 +1,7 @@
-// import { rackets } from "@/utils/mock";
 import { getRackets } from "@/services/get-rackets";
 import { IRacket } from "@/utils/types.dto";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
-// export async function generateStaticParams() {
-//   return rackets.map((racket) => ({
-//     id: racket.id.toString(),
-//   }));
-// }
 
 export default async function RacketPage({
   params,
