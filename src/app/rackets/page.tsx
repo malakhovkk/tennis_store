@@ -8,12 +8,12 @@ export default async function RacketsPage() {
     return <div>Ошибка загрузки данных</div>;
   }
   return (
-    <main className="main p-4flex-col">
+    <main className="main p-4 flex-col">
       <h2 className="text-lg">Ракетки</h2>
       <ul className="flex flex-wrap gap-4 justify-center mt-4">
         {data?.map((racket: IRacket) => {
           return <Card key={racket.id} racketData={racket} />;
-        })}
+        })} */}
       </ul>
     </main>
   );
