@@ -1,8 +1,9 @@
-import NavigationLink from "./navigationLink";
+import { NavigationLink } from "./navigationLink";
 
 const navLinks = [
   { href: "/", title: "Главная" },
   { href: "/rackets", title: "Ракетки" },
+  { href: "/top-10-rackets", title: "Топ-10" },
 ];
 
 export default function Menu() {
