@@ -1,8 +1,6 @@
 import { IRacket } from "@/utils/types.dto";
 import { FC } from "react";
 
-import styles from "./racket.module.css";
-
 type Props = {
   racket: IRacket;
 };
